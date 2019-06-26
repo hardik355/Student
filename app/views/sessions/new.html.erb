@@ -1,0 +1,25 @@
+<html>
+  <head>
+     <h1>Log In</h1>
+     <h2> Access Youe Account </h2>
+  </head>
+  <body align="center">
+    <%= form_tag sessions_path do %>
+      <%= label_tag :email %>
+      <%= email_field_tag :email, params[:email] %><br><br>
+  
+      <%= label_tag :password %>
+      <%= password_field_tag :password %><br><br>
+        
+      <%= submit_tag "Log In" %>
+      <%= link_to "Sign Up", new_register_path %>
+   <% end %>
+   </body>
+</html>
+
+
+
+
+
+
+

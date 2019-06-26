@@ -1,0 +1,28 @@
+
+
+<h1> Student Register Form </h1>
+
+<%= form_with(model: @register) do |form|%>
+    <%= form.label :first_name%>
+    <%= form.text_field :first_name%><br><br>
+
+    <%= form.label :last_name%>
+    <%= form.text_field :last_name%><br><br>    
+
+    <%= form.label :email%>
+    <%= form.text_field :email%><br><br>
+
+    <%= form.label :city%>
+    <%= form.text_field :city%><br><br>
+
+    <%= form.label :area%>
+    <%= form.text_field :area%><br><br>
+
+    <%= form.label :mobile_no%>
+    <%= form.text_field :mobile_no%><br><br>
+
+    <%= form.label :password%>
+    <%= form.password_field :password%><br><br>
+
+    <%= form.submit %>
+    <% end %>

@@ -1,0 +1,23 @@
+<h1> Student All Records </h1>
+<%= link_to 'New Regestration', new_welcome_path %><br><br>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>E-Mail</th>
+    <th>User Name</th>
+    <th>Password</th>
+  </tr>
+  <% @welcomes.each do |welcome|%>
+    <tr>
+      <td><%= welcome.First_name %></td>
+      <td><%= welcome.last_name %></td>
+      <td><%= welcome.email %></td>
+      <td><%= welcome.user %></td>
+      <td><%= welcome.password %></td>
+      <td><%= link_to 'show', welcome_path(welcome)%></td>
+      <td><%= link_to 'edit', edit_welcome_path(welcome)%></td>
+      <td><%= link_to 'Destroy',welcome_path(welcome),method: :"delete", data: {confirm: "Are You Sure"} %> </td> 
+    </tr>
+    <% end %>
+  </table>
