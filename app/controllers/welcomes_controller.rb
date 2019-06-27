@@ -1,8 +1,10 @@
 class WelcomesController < ApplicationController
 
+  layout false
+
   def index
     @welcomes = Welcome.all
-    render :layout => 'test'
+    # render :layout => 'test'
   end
 
   def show  
@@ -36,6 +38,7 @@ class WelcomesController < ApplicationController
   end
 
   private
+  
   def welcome_params
     params.require(:welcome).permit(:First_name, :last_name, :email, :user, :password)
   end

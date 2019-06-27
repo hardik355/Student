@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'author/index'
+  get 'book/index'
   # get 'welcomes/New'
   # get 'welcomes/Update'
   # get 'welcomes/Show'

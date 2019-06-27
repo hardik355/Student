@@ -4,8 +4,9 @@ class SessionsController < ApplicationController
   # email, password = "kapspatel355@gmail.com", "0988"
   # before_filter :authenticate, :only => [ :new ]
    
-  layout "test1"
+  # layout "test1"
   # render "welcomes/show"
+  # layout false
 
   def new
   end
@@ -52,6 +53,9 @@ class SessionsController < ApplicationController
   #   authenticate_or_request_with_http_digest do |email, password|
   #     USERS[email, password]
   #   end
+  # end
+  # def test1
+    # @current_user.special? ? "special" : "sessions"
   # end
 
   def register_params

@@ -3,8 +3,9 @@ before_action :require_login, only: [:show, :edit, new]
 
   # render :templete => "sessions/new"
   # render plain: "Example"  
-    layout :registers_layout
-
+  layout :registers_layout
+  layout false
+  
   def index
     @registers = Register.all
   end

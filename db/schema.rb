@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_24_065750) do
+ActiveRecord::Schema.define(version: 2019_06_27_104451) do
+
+  create_table "Books", force: :cascade do |t|
+    t.string "authorname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "bookname"
+    t.integer "Authors_id"
+    t.index ["Authors_id"], name: "index_Books_on_Authors_id"
+  end
+
+# Could not dump table "Logins" because of following StandardError
+#   Unknown type '' for column 'references'
 
   create_table "Tests", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -31,8 +43,11 @@ ActiveRecord::Schema.define(version: 2019_06_24_065750) do
     t.string "password"
   end
 
-# Could not dump table "logins" because of following StandardError
-#   Unknown type 'Registers' for column 'references'
+  create_table "authors", force: :cascade do |t|
+    t.string "authorname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "registers", force: :cascade do |t|
     t.text "first_name"
