@@ -17,7 +17,8 @@
       <td><%= welcome.password %></td>
       <td><%= link_to 'show', welcome_path(welcome)%></td>
       <td><%= link_to 'edit', edit_welcome_path(welcome)%></td>
-      <td><%= link_to 'Destroy',welcome_path(welcome),method: :"delete", data: {confirm: "Are You Sure"} %> </td> 
+      <td><%= link_to 'Destroy',welcome_path(welcome),method: :"delete", 
+                    data: {confirm: "Are You Sure"} %> </td> 
     </tr>
     <% end %>
   </table>

@@ -1,5 +1,5 @@
 class RegistersController < ApplicationController
-before_action :require_login, only: [:show, :edit, new]
+ before_action :require_login, only: [:show, :edit, new]
 
   # render :templete => "sessions/new"
   # render plain: "Example"  
@@ -9,23 +9,19 @@ before_action :require_login, only: [:show, :edit, new]
   def index
     @registers = Register.all
   end
-
-  def show  
-     @register = Register.find(params[:id])
-  end
-
-  def edit
-    @register = Register.find(params[:id])
-  end
-
+  
   def new
     @register = Register.new
   end
 
   def create
     @register = Register.new(register_params)
-    @register.save
+    @register.save  
     redirect_to @register
+  end
+
+  def edit
+    @register = Register.find(params[:id])
   end
 
   def update
@@ -35,6 +31,10 @@ before_action :require_login, only: [:show, :edit, new]
     else
       render :edit
     end
+  end
+
+  def show  
+    @register = Register.find(params[:id])
   end
   
   def destroy
@@ -46,11 +46,10 @@ before_action :require_login, only: [:show, :edit, new]
   private
   def require_login
     unless session[:user_id].present?
-      flash[:error] = "You must be logged in to access this section"
-      redirect_to new_session_path # halts request cycle
-    end
+     flash[:error] = "You must be logged in to access this section"
+     redirect_to new_session_path # halts request cycle
+   end
   end
-
   def register_params
     params.require(:register).permit(:first_name, :last_name, :email, :city, :area, :mobile_no, 
     :password)

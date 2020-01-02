@@ -21,8 +21,7 @@
         <td><%= register.password %></td>
         <td><%= link_to 'show', register_path(register)%></td>
         <td><%= link_to 'edit', edit_register_path(register)%></td>
-        <td><%= link_to 'Destroy',register_path(register),
-                    method: :"delete",
+        <td><%= link_to 'Destroy',register_path(register),method: :"delete",
                     data: {confirm: "Are You Sure"} %> </td> 
         </tr>
         <% end %>

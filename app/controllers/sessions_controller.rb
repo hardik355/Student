@@ -54,6 +54,7 @@ class SessionsController < ApplicationController
   #     USERS[email, password]
   #   end
   # end
+
   # def test1
     # @current_user.special? ? "special" : "sessions"
   # end
